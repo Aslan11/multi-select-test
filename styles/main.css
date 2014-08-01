@@ -62,3 +62,30 @@ body{
 	font-weight: 300;
 }
 
+.organizations{
+	width :100%;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	background: white;	
+	min-height: 120px;
+	z-index: 2;
+	display: none;
+}
+
+.active .organizations{
+	display: block;
+}
+
+.organizations > div{
+	width: 90%;
+	background: #f5f5f5;
+	margin: 0 auto;
+	margin-top: 10px;
+	
+}
+
+.organizations > div:hover{
+	background: #ececec;
+}
+

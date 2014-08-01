@@ -23,34 +23,33 @@ app.controller('mainController', function($scope, $http, $rootScope, $location, 
 	$http({method: 'GET', url: '../../data.json'}).
 	    success(function(data, status, headers, config) {
 	      $scope.categories = data.results;
+	      for (var i = 0; i < $scope.categories.length; i++){
+		      $scope.categories[i].active = false;
+	      }
 	    }).
 	    error(function(data, status, headers, config) {
 	      console.log('Oh snap... data is missing!')
 	    });
+	    
+
+	//tab toggle
+	$scope.lastSelectedCategory = -1;
+	$scope.setSelected = function(idx) {
+        for (var i = 0; i < $scope.categories.length; i++){
+	      	$scope.categories[i].active = false;
+		}
+        $scope.categories[idx].active = 'true';
+    };
 	
 });
 
-app.directive('category', function($element) {
-	var directive = {};
-	directive.restrict = "A";
-	directive.scope = {
-		'user' : "@"
-	}
+
+
+var classToggler = function(element, className) {
+    element = $(element);
+    element.toggleClass(className);
+};
+
+app.directive('Category', function(){
 	
-	$element.on('click', function(){clear()});
-	
-	directive.clear = function(){
-		directive.scope.user = 'bitchass';
-	}
-	
-	
-	
-	directive.template = '{{category.name}}';
-	
-	return directive;
-	/*
-return {
-		template: '{{category.name}}'
-	};
-*/
-});
+})

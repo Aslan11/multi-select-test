@@ -23,13 +23,14 @@ By Kevin Paul Martin
 <body ng-controller="mainController">
 	
 	<section class="cell">
-		<div ng-repeat="category in categories" ng-init="active = false;" ng-class="{'active': active}" ng-click="clear(); active = true;" class="dropdown">
+		<div ng-repeat="category in categories" ng-class="{'active': category.active}" ng-click="setSelected($index)">
 			<h3 class="category-title" >{{ category.name }}</h3>
-			<h1 category></h1>
+			<section class="organizations">
+				<div ng-repeat="organization in category.organizations">{{organization.name}}</div>
+			</section>
 		</div>
 	</section>
 	
-
 
 	<!-- Scripts -->
 	<script src="/scripts/vendor.js"></script>
