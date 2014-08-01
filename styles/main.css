@@ -1,0 +1,64 @@
+body, html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body{
+	background: white;
+	font-family: "helvetica neue", "helvetica", "arial", sans-serif;
+}
+
+.cell{
+	max-width: 1200px;
+	width: 100%;
+	height: 182px;
+	background: #FCFCFC;
+	border: 1px solid #ececec;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-top:20px;
+}
+
+.cell > div{
+	width: calc(25% - 30px);
+	height: 40px;
+	background: #f5f5f5;
+	color: #646464;
+	display: inline-block;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	cursor: pointer;
+}
+
+.cell > div.active{
+	background: white;
+}
+
+.cell > div::after{
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	right: 12px;
+	top: 17px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #646464;
+}
+
+.cell > div:nth-of-type(4n - 3){
+	margin-left: 30px;
+}
+
+.category-title{
+	margin: 10px 0 10px 10px;
+	font-size: 16px;
+	font-weight: 300;
+}
+

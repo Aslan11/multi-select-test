@@ -1,0 +1,38 @@
+<!doctype html>
+<!--
+  _____  _          _       _ _               _______        _   
+ |  __ \| |        | |     | (_)             |__   __|      | |  
+ | |__) | | ___  __| | __ _| |_ _ __   __ _     | | ___  ___| |_ 
+ |  ___/| |/ _ \/ _` |/ _` | | | '_ \ / _` |    | |/ _ \/ __| __|
+ | |    | |  __/ (_| | (_| | | | | | | (_| |    | |  __/\__ \ |_ 
+ |_|    |_|\___|\__,_|\__, |_|_|_| |_|\__, |    |_|\___||___/\__|
+                       __/ |           __/ |                     
+                      |___/           |___/                                           
+                      
+By Kevin Paul Martin
+7/31/14
+-->
+<html lang="en" data-ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Pledgling Test</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body ng-controller="mainController">
+	
+	<section class="cell">
+		<div ng-repeat="category in categories" ng-init="active = false;" ng-class="{'active': active}" ng-click="clear(); active = true;" class="dropdown">
+			<h3 class="category-title" >{{ category.name }}</h3>
+			<h1 category></h1>
+		</div>
+	</section>
+	
+
+
+	<!-- Scripts -->
+	<script src="/scripts/vendor.js"></script>
+	<script src="/scripts/app.js"></script>
+</body>
+</html>
