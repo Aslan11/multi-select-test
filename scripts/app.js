@@ -70,6 +70,8 @@ app.controller('mainController', function($scope, $http, $rootScope, $location, 
 					if($scope.categories[i].organizations[s].id == $scope.orgs[d].id && $scope.orgs[d].active){
 						count++;
 						$scope.categories[i].organizations[s].active = true;
+					}else{
+						$scope.categories[i].organizations[s].active = false;
 					}
 				}
 			}
