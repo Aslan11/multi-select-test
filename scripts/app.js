@@ -12,7 +12,7 @@ app.controller('mainController', function($scope, $http, $rootScope, $location, 
 	
 
 	//Get Ze Data...
-	$http({method: 'GET', url: '../data.json'}).
+	$http({method: 'GET', url: './scripts/data.json'}).
 	    success(function(data, status, headers, config) {
 	      $scope.categories = data.results;
 		  var valid = false;
