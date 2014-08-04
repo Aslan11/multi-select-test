@@ -55,10 +55,10 @@ app.controller('mainController', function($scope, $http, $rootScope, $location, 
 				}
 			}
 		}	
-		$scope.checkActive(id);	
+		$scope.checkActive();	
 	};
 	
-	$scope.checkActive = function(id){
+	$scope.checkActive = function(){
 		//categories
 		for (var i = 0; i < $scope.categories.length; i++){
 			var count = 0;
@@ -66,11 +66,11 @@ app.controller('mainController', function($scope, $http, $rootScope, $location, 
 			for(var s = 0; s < $scope.categories[i].organizations.length; s++){
 			 	//parent organzitions array
 			 	for( var d = 0; d < $scope.orgs.length; d++){
-			 		//if the organization id matches the parent organization id and that parent organzition has been activated by setActive
+			 		//if the organization id matches the parent organization id and that parent organzition has been activated by setActive  			
 					if($scope.categories[i].organizations[s].id == $scope.orgs[d].id && $scope.orgs[d].active){
 						count++;
 						$scope.categories[i].organizations[s].active = true;
-					}else{
+					}else if($scope.categories[i].organizations[s].id == $scope.orgs[d].id && $scope.orgs[d].active == false){
 						$scope.categories[i].organizations[s].active = false;
 					}
 				}
