@@ -23,10 +23,10 @@ By Kevin Paul Martin
 <body ng-controller="mainController">
 	
 	<section class="cell">
-		<div ng-repeat="category in categories" ng-class="{'active': category.active}" ng-click="setSelected($index)">
-			<h3 class="category-title" >{{ category.name }}</h3>
+		<div ng-repeat="category in categories" ng-init="category.active = false" ng-click="setSelected($index, category.active)" ng-class="{'active': category.active}">
+			<h3 class="category-title" ><span ng-show="category.count > 0">{{category.count}} &nbsp;</span>{{ category.name }}</h3>
 			<section class="organizations">
-				<div ng-repeat="organization in category.organizations">{{organization.name}}</div>
+				<div ng-repeat="organization in category.organizations" ng-init="organization.active = false" ng-click="setActive(organization.id);" ng-class="{'active': organization.active == true}">{{organization.name}}</div>
 			</section>
 		</div>
 	</section>
