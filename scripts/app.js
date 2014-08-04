@@ -2,18 +2,6 @@
 ---------------------------------------------------------------------- */
 var app = angular.module('app', ['ngRoute', 'ngResource']);
 
-app.config(function($httpProvider, $routeProvider, $locationProvider){
-	$routeProvider.
-		when('/', {
-			action: 'home'
-		}).
-		otherwise({ redirectTo: '/' });
-
-	// Remove "#" from the URL (Except for IE < 10)
-	if(window.history && window.history.pushState){
-		$locationProvider.html5Mode(true);
-	}
-});
 /*	Main Controller
 ---------------------------------------------------------------------- */
 app.controller('mainController', function($scope, $http, $rootScope, $location, $route, $routeParams, $timeout, $resource, $element){
